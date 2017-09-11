@@ -37,8 +37,7 @@ public class Demo {
         // The available FrameGrabber classes include OpenCVFrameGrabber (opencv_videoio),
         // DC1394FrameGrabber, FlyCaptureFrameGrabber, OpenKinectFrameGrabber, OpenKinect2FrameGrabber,
         // RealSenseFrameGrabber, PS3EyeFrameGrabber, VideoInputFrameGrabber, and FFmpegFrameGrabber.
-        // FrameGrabber grabber = FrameGrabber.createDefault(0);
-        FFmpegFrameGrabber grabber = FFmpegFrameGrabber.createDefault("rtsp://admin:a12345678@192.168.1.111:554/h264/ch1/main/av_stream");
+        FrameGrabber grabber = FrameGrabber.createDefault(0);
         grabber.start();
 
         // CanvasFrame, FrameGrabber, and FrameRecorder use Frame objects to communicate image data.
@@ -128,7 +127,7 @@ public class Demo {
             Frame rotatedFrame = converter.convert(rotatedImage);
             frame.showImage(rotatedFrame);
             //recorder.record(rotatedFrame);
-            // Thread.sleep(5000);
+            // Thread.sleep(50);
         }
         frame.dispose();
         //recorder.stop();
